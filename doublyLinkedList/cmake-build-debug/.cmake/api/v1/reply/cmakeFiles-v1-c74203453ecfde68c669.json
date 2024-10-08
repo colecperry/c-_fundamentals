@@ -1223,8 +1223,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/Users/colecperry/Development/code/c++_fundamentals/practice/cmake-build-debug",
-		"source" : "/Users/colecperry/Development/code/c++_fundamentals/practice"
+		"build" : "/Users/colecperry/Development/code/c++_fundamentals/doublyLinkedList/cmake-build-debug",
+		"source" : "/Users/colecperry/Development/code/c++_fundamentals/doublyLinkedList"
 	},
 	"version" : 
 	{

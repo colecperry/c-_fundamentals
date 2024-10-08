@@ -87,9 +87,9 @@ int pop(NodeType *&head, NodeType *&tail) {
     while (current->link != tail) {  // Traverse the list to find the node before the last node
         current = current->link;  // Move `current` to the next node
     }
-    int value = tail->data;  // Store the value of the last node
+    int value = tail->data;  // Store the value of the last node to return it
     delete tail;  // Delete the last node
-    current->link = nullptr;  // Set the link of the second last node to nullptr
+    current->link = nullptr;  // Set the link of the second to last node to nullptr
     tail = current;  // Update tail to point to the new last node
     return value;  // Return the value of the removed node
 }

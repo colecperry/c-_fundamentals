@@ -96,12 +96,14 @@ int main() {
     }
     cout << endl;
 
-    // Character array: an array whose components are of type char -> the array has one more character than the C-string because they are 'null terminated' which means the string ends with a special character '\0'
-    char string[16]; // Array string has 16 components and can store 15 characters
+    // Character array: Simply an array that holds characters, does not have to be null terminated
+    char charArray[5] = {'a', 'b', 'c', 'd', 'e'};
+
+    // C-String: a type of character array that is 'null terminated' (ends with a special character '\0')
 
     char name[] = "John"; // declares an array of length 5 and stores the C-string "John" -> C-strings are an array that represents a sequence of characters
 
-    // strcpy: Copy one C-string to another
+    // strcpy: Copy one C-string to a character array -> Make sure it is large enough to store null operator
     char copyName[20]; // Declare an empty array to hold the copied string
     strcpy(copyName, name); // Copy the content of 'name' into 'copyName'
     cout << "Copied string: " << copyName << endl;

@@ -74,8 +74,7 @@ int main() {
     char str[MAX_LENGTH];       // Create a character array str to hold the input
 
     cout << "Enter a string with blanks (up to " << MAX_LENGTH - 1 << " characters): ";
-    cin.get(str, MAX_LENGTH);   // Read a line of input including spaces up to MAX_LENGTH-1 -> first arg is a
-    // character array to store the input, second arg specifies the maximum number of chars to read
+    cin.get(str, MAX_LENGTH);   // Read a line of input including spaces up to MAX_LENGTH-1 -> first arg is a character array to store the input, second arg specifies the maximum number of chars to read
 
     cout << "You entered: " << str << endl; // Output the string entered
 
