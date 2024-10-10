@@ -55,12 +55,6 @@ build CMakeFiles/practice.dir/main.cpp.o: CXX_COMPILER__practice_unscanned_Debug
   OBJECT_DIR = CMakeFiles/practice.dir
   OBJECT_FILE_DIR = CMakeFiles/practice.dir
 
-build CMakeFiles/practice.dir/Person.cpp.o: CXX_COMPILER__practice_unscanned_Debug /Users/colecperry/Development/code/c++_fundamentals/practice/Person.cpp || cmake_object_order_depends_target_practice
-  DEP_FILE = CMakeFiles/practice.dir/Person.cpp.o.d
-  FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/practice.dir
-  OBJECT_FILE_DIR = CMakeFiles/practice.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target practice
@@ -69,7 +63,7 @@ build CMakeFiles/practice.dir/Person.cpp.o: CXX_COMPILER__practice_unscanned_Deb
 #############################################
 # Link the executable practice
 
-build practice: CXX_EXECUTABLE_LINKER__practice_Debug CMakeFiles/practice.dir/main.cpp.o CMakeFiles/practice.dir/Person.cpp.o
+build practice: CXX_EXECUTABLE_LINKER__practice_Debug CMakeFiles/practice.dir/main.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
   OBJECT_DIR = CMakeFiles/practice.dir
   POST_BUILD = :
