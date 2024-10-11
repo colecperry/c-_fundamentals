@@ -1,0 +1,5 @@
+# ninja log v6
+1	960	1728606306523684672	CMakeFiles/stackClassUsingLinkedList.dir/main.cpp.o	36d7d6a9a93f28e0
+5	537	1728606382472256326	CMakeFiles/stackClassUsingLinkedList.dir/stack.cpp.o	432a4ebbc76b69ee
+4	537	1728606382471620036	CMakeFiles/stackClassUsingLinkedList.dir/main.cpp.o	36d7d6a9a93f28e0
+537	650	1728606383005093554	stackClassUsingLinkedList	6114f4bafa221eee

@@ -1,0 +1,17 @@
+# ninja log v6
+2	491	1728622354174198115	CMakeFiles/stackUsingArray.dir/stack.cpp.o	2123e6079ac22ba4
+1	493	1728622354172986956	CMakeFiles/stackUsingArray.dir/main.cpp.o	414c6b887b404cec
+493	596	1728622354664966831	stackUsingArray	594cd6fabbad5b26
+3	546	1728622404954735272	CMakeFiles/stackUsingArray.dir/main.cpp.o	414c6b887b404cec
+547	633	1728622405498023751	stackUsingArray	594cd6fabbad5b26
+4	491	1728622457615875356	CMakeFiles/stackUsingArray.dir/main.cpp.o	414c6b887b404cec
+491	579	1728622458103127761	stackUsingArray	594cd6fabbad5b26
+4	508	1728622558102749689	CMakeFiles/stackUsingArray.dir/main.cpp.o	414c6b887b404cec
+5	509	1728622558103152519	CMakeFiles/stackUsingArray.dir/stack.cpp.o	2123e6079ac22ba4
+509	594	1728622558607304653	stackUsingArray	594cd6fabbad5b26
+4	366	1728622573804699286	CMakeFiles/stackUsingArray.dir/main.cpp.o	414c6b887b404cec
+366	394	1728622574166594747	stackUsingArray	594cd6fabbad5b26
+3	541	1728623082445724686	CMakeFiles/stackUsingArray.dir/stack.cpp.o	2123e6079ac22ba4
+542	646	1728623082983944780	stackUsingArray	594cd6fabbad5b26
+5	484	1728623227470155598	CMakeFiles/stackUsingArray.dir/stack.cpp.o	2123e6079ac22ba4
+484	570	1728623227949412134	stackUsingArray	594cd6fabbad5b26

@@ -1,0 +1,3 @@
+/Users/colecperry/Development/code/c++_fundamentals/stackUsingArray/cmake-build-debug/CMakeFiles/stackUsingArray.dir
+/Users/colecperry/Development/code/c++_fundamentals/stackUsingArray/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/colecperry/Development/code/c++_fundamentals/stackUsingArray/cmake-build-debug/CMakeFiles/rebuild_cache.dir
