@@ -84,3 +84,25 @@ void Stack::print() const {
     cout << endl;
 }
 
+// Copy the contents of another stack into this stack
+void Stack::copyStack(const Stack& source) {
+    // Step 1: Allocate new memory for the copied stack's array
+    int* newArr = new int[source.capacity];
+
+    // Step 2: Copy the elements from the source stack's array to the new array
+    for (int i = 0; i <= source.top; i++) {
+        newArr[i] = source.arr[i];
+    }
+
+    // Step 3: Delete the current stack's array
+    delete[] arr;
+
+    // Step 4: Update this stack's array, capacity, and top with the copied values
+    arr = newArr;
+    capacity = source.capacity;
+    top = source.top;
+
+    cout << "Stack copied successfully." << endl;
+}
+
+

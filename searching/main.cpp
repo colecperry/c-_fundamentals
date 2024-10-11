@@ -70,30 +70,53 @@ int seqSearch(int list[], int length, int numToSearch) {
     }
 }
 
+// Seq search simplified
+// int seqSearch(int arr[], int size, int target) {
+//     for (int i = 0; i < size; i++) {
+//         if (arr[i] == target) {
+//             return i;
+//         }
+//     }
+//     return -1;
+// }
+
 // Binary search function: Efficiently searches a sorted array by dividing the search range in half. Assumes that the array is sorted
+// Binary search function: Efficiently searches a sorted array by dividing the search range in half. Assumes that the array is sorted.
 int binarySearch(int list[], int length, int item) {
     int first = 0;  // Start of the search range
     int last = length - 1;  // End of the search range
     int mid;  // Variable to hold the midpoint of the search range
-    bool found = false;  // Flag to track if the number is found
 
     // Loop to repeatedly divide the search range in half
-    while (first <= last && !found) {
-        mid = first + (last - first) / 2;  // Find the midpoint
+    while (first <= last) {
+        mid = first + (last - first) / 2;  // Find the midpoint: The reason we use this instead of (first+last)/2 is to prevent us from adding two integers that exceed the maximum limit of an integer ( 2.147 bil)
 
         if (list[mid] == item) {  // If the item is at the midpoint
-            found = true;  // Set found to true
+            return mid;  // Return the index where the item is found
         } else if (list[mid] > item) {
             last = mid - 1;  // If the item is smaller, search the left half
         } else {
             first = mid + 1;  // If the item is larger, search the right half
         }
     }
-
-    // Return the midpoint if the number is found, otherwise return -1
-    if (found) {
-        return mid;  // Return the index where the number was found
-    } else {
-        return -1;  // Return -1 if the number is not found
-    }
+    return -1;  // Return -1 if the item is not found
 }
+
+// Bin search simplified:
+// int binarySearch(int arr[], int size, int target) {
+//     int low = 0, high = size - 1;
+//     while (low <= high) {
+//         int mid = (low + high) / 2;
+//         if (arr[mid] == target) {
+//             return mid;
+//         }
+//         if (arr[mid] < target) {
+//             low = mid + 1;
+//         }
+//         else {
+//             high = mid - 1;
+//         }
+//     }
+//     return -1;
+// }
+

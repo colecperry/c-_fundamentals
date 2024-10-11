@@ -58,14 +58,20 @@ void Person::print() const {
 
 }
 
-// ostream operator: We are going to overload the operator by passing it the ostream object
-// and an instance from the person class -> We are printing the object similar to toString
-// because we would have to print the object each time using dot notation
+// Operator overloading ostream and istream: allows you to define how an object of the
+// Person class is printed or read using output cout and cin streams. Instead of calling a print
+// function each time, you can just use cout << personObject
+
+// Overloading output operator: allows you to print a person object using cout. Inside the overloaded
+// function you define how the Person object's data members are displayed
+// cout << p1 should output "John Jill James"
 ostream& operator<<(ostream& osObject, const Person& p1) {
     osObject << p1.firstName << " " << p1.middleName << " " << p1.lastName;
     return osObject;
 }
 
+// Overloading input operator: this allows you to read data into a person object using cin >> personObject
+// Inside the overloaded function you specify how input from the stream is assigned to the data members
 istream& operator>>(istream& isObject, Person& p1) {
     isObject >> p1.firstName >> p1.middleName >> p1.lastName;
     return isObject;

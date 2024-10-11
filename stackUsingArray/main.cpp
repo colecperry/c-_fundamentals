@@ -42,16 +42,35 @@ int main() {
     // Peek again
     cout << "Top element is: " << s.peek() << endl;
 
-    // Empty the stack completely
+    // Showcase the copyStack function
+    cout << "Creating a copy of the current stack (s) into a new stack (sCopy)..." << endl;
+    Stack sCopy(3);  // Create a new empty stack
+    sCopy.copyStack(s);  // Copy the contents of stack s into stack sCopy
+
+    // Display the copied stack
+    cout << "Copied stack (sCopy) after copying from s: ";
+    sCopy.print();
+
+    // Modify the copied stack to ensure it's independent of the original
+    cout << "Pushing 80 onto the copied stack (sCopy)..." << endl;
+    sCopy.push(80);
+    sCopy.print();
+
+    // Display the original stack again to ensure it remains unchanged
+    cout << "Original stack (s) should remain unchanged: ";
+    s.print();
+
+    // Empty the original stack completely
     while (!s.isEmpty()) {
         cout << "Popped element: " << s.pop() << endl;
     }
 
-    // Check if the stack is empty now
-    cout << "Is the stack empty? " << (s.isEmpty() ? "Yes" : "No") << endl;
+    // Check if the original stack is empty now
+    cout << "Is the original stack (s) empty? " << (s.isEmpty() ? "Yes" : "No") << endl;
 
-    // Try to pop from an empty stack
-    s.pop();  // This should trigger a stack underflow message
+    // Check if the copied stack still retains its values
+    cout << "Copied stack (sCopy) should still contain elements: ";
+    sCopy.print();
 
     return 0;
 }

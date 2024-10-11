@@ -36,6 +36,7 @@ public:
     // New functions for passing and returning objects
     void updateNameByValue(Person person);                   // Pass-by-value example
     void updateNameByReference(Person& person);              // Pass-by-reference example
+    void updateNameByReference2(Person& person) const;       // Pass by reference using const
     static Person createNewPerson(string fn, string mn, string ln); // Return object
 
     // Function that accepts const reference

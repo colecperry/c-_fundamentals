@@ -58,14 +58,20 @@ int Person::getPersonCount() {
     return Person::personCount;
 }
 
-// Function to demonstrate passing object by value
+// Function to demonstrate passing object by value: may require a large amount of storage space to copy value
 void Person::updateNameByValue(Person person) {
     person.setFullName("Alice", "Marie", "Johnson");  // Modify the copied object
     cout << "Inside updateNameByValue (Modified Copy): " << person.getFullName() << endl;
 }
 
-// Function to demonstrate passing object by reference
+//Function to demonstrate passing object by reference: Problem is the actual parameter changes
 void Person::updateNameByReference(Person& person) {
+    person.setFullName("Robert", "William", "Smith");  // Modify the original object
+    cout << "Inside updateNameByReference (Modified Original): " << person.getFullName() << endl;
+}
+
+// Solution -> use const
+void Person::updateNameByReference2(Person& person) const {
     person.setFullName("Robert", "William", "Smith");  // Modify the original object
     cout << "Inside updateNameByReference (Modified Original): " << person.getFullName() << endl;
 }

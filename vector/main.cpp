@@ -16,25 +16,25 @@ using namespace std;
 void pushIntegers(stack<int>& s, int count) {
     cout << "Pushing " << count << " integers onto the stack: " << endl;
     for (int i = 0; i < count; i++) {
-        s.push(i); // Push integers onto the stack
+        s.push(i); // Push integers onto the stack using the built-in function
     }
 }
 
 // Function to pop and print elements from the stack
 void popAndPrintStack(stack<int>& s) {
     cout << "Popping and printing elements from the stack: " << endl;
-    while (!s.empty()) {  // Continue until the stack is empty
-        int x = s.top();  // Get the top element
+    while (!s.empty()) {  // Continue until the stack is empty using the built-in method
+        int x = s.top();  // Get the top element using the built-in method
         cout << x << endl;  // Print the top element
-        s.pop();  // Pop the top element off
+        s.pop();  // Pop the top element off using the built-in method
     }
 }
 
 // Function to print elements of a vector of type `Person`
-void printPersonVector(const vector<Person>& vec) {
+void printPersonVector(const vector<Person>& vec) { // Takes argument vector of Person objects, vec is the name
     cout << "Printing Person objects in the vector:" << endl;
-    for (int i = 0; i < vec.size(); i++) {
-        vec[i].print();  // Call the `print()` method of each `Person` object
+    for (int i = 0; i < vec.size(); i++) { // Use built in .size() method
+        vec[i].print();  // Call the `print()` method of each `Person` object which is located in the Person class
     }
 }
 
@@ -57,7 +57,7 @@ void printStringVector(const vector<string>& vec) {
 }
 
 int main() {
-    // Create a stack using a vector as the underlying container
+    // Create a stack using the built-in stack container from the C++ STL
     stack<int> s1;
 
     // Push 5 integers onto the stack using the `pushIntegers` function
@@ -76,9 +76,12 @@ int main() {
     Person p2("Sally", "Smith", "Jones");
     Person p3("James", "Sally", "Thomas");
 
-    myList3.push_back(p1);
-    myList3.push_back(p2);
+    myList3.push_back(p1); // .push_back() is a built in method specifically for the vector library, used to add
+    myList3.push_back(p2); // an element to the end of the vector
     myList3.push_back(p3);
+
+    myList3.pop_back(); // Built in method to remove the last element from the vector
+
 
     // Print each vector using the respective print functions
     printIntVector(myList1);  // Prints integers

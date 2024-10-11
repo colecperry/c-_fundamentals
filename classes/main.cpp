@@ -7,17 +7,19 @@ int main() {
     Person p1;
     p1.print();  // Output: Name is John Jill James
     //         Total number of persons: 1
+    // Access class members
+    cout << "Access first name: " << p1.getFirstName() << endl;
 
     // Create another Person object using the parameterized constructor
     Person p2("Sally", "Smith", "Jones");
     p2.print();  // Output: Name is Sally Smith Jones
     //         Total number of persons: 2
 
-    // Pass-by-value demonstration
+    // Pass class object by value demonstration
     p1.updateNameByValue(p2);
     p2.print();  // Output: Name is Sally Smith Jones (Original object unchanged)
 
-    // Pass-by-reference demonstration
+    // Pass class object by reference demonstration
     p1.updateNameByReference(p2);
     p2.print();  // Output: Name is Robert William Smith (Original object modified)
 

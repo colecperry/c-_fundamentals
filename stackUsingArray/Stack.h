@@ -15,6 +15,7 @@ public:
     bool isEmpty() const;     // Check if the stack is empty
     bool isFull() const;      // Check if the stack is full
     void print() const;       // Print the stack elements
+    void copyStack(const Stack &other); // Copy another stack into this stack
 
 private:
     void resize();            // Resize the array if it becomes full
