@@ -51,7 +51,8 @@ void bubbleSort2(int array[], int length) {
 }
 
 
-// Insertion sort: This sorting algorithm divides the array into a sorted and an unsorted section. It picks elements from the unsorted section one by one and inserts them into their correct position in the sorted section.
+// Insertion sort: Start from the second element and compare to the first, if smaller, swap them. From the third element, compare to the second
+// element, if smaller, swap, and then the first element, if smaller, swap. Continue to fourth element...
 void insertionSort(int array[], int length) {
     // Outer loop: Traverse through the array starting from index 1
     // The element at index 0 is considered as the initial sorted portion
@@ -76,8 +77,7 @@ void insertionSort(int array[], int length) {
 #include <iostream>
 using namespace std;
 
-// Selection sort: This sorting algorithm repeatedly finds the smallest (or largest) element from the unsorted part of the array
-// and swaps it with the first element of the unsorted part, thereby growing the sorted portion of the array step-by-step.
+// Selection sort: Find the smallest (or largest) element and move it to the beginning (or end) of the list
 void selectionSort(int array[], int length) {
     // Outer loop: Iterate through the entire array
     // `i` marks the beginning of the unsorted portion and the end of the sorted portion.
@@ -97,7 +97,7 @@ void selectionSort(int array[], int length) {
 
         // After finding the smallest element in the unsorted portion, swap it with the first element of the unsorted portion.
         // This ensures that the smallest element is placed in its correct sorted position.
-        if (minIndex != i) {  // Only swap if a new minimum was found (i.e., `minIndex` is different from `i`).
+        if (minIndex != i) {  // Only swap if a new minimum was found -> avoid unnecessary swaps if the values are equal
             int temp = array[i];     // Store the element at index `i` in `temp`.
             array[i] = array[minIndex];  // Move the minimum element to index `i`.
             array[minIndex] = temp;      // Place the original element from index `i` to the `minIndex`.
@@ -131,7 +131,7 @@ int main() {
 
     // Bubble Sort
     cout << "\nApplying Bubble Sort...\n";
-    bubbleSort(bubbleSortArray, size);
+    bubbleSort(bubbleSortArray, size); // Pass only the variable names, no need to use & because in C++ arrays are passed by reference automatically
     cout << "Bubble Sort Result: ";
     printList(bubbleSortArray, size);
 

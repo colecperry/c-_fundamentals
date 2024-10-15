@@ -2,6 +2,8 @@
 #include <vector>
 #include <deque>
 #include <list>
+#include <stack>
+#include <queue>
 
 using namespace std;
 
@@ -18,11 +20,15 @@ void vectorOperations() {
 
     // Display the vector using an iterator
     cout << "Vector elements: ";
-    vector<int>::iterator it; // Declare an iterator "it" of type vector<int>::iterator
-    for (it = myVector.begin(); it != myVector.end(); ++it) { // it = myVector.begin() is initializing the iterator
-        cout << *it << " "; // it to point to the first element of the vector, and the loop continues as long as it
-    } // does not point to the position after the last element in the vector
+    vector<int>::iterator it;
+    for (it = myVector.begin(); it != myVector.end(); ++it) {
+        cout << *it << " ";
+    }
     cout << endl;
+
+    // Vector size and capacity
+    cout << "Vector size: " << myVector.size() << endl;
+    cout << "Vector capacity: " << myVector.capacity() << endl;
 
     // Deletion: Removing the last element
     myVector.pop_back();
@@ -31,6 +37,9 @@ void vectorOperations() {
         cout << *it << " ";
     }
     cout << endl;
+
+    // Check if the vector is empty
+    cout << "Is the vector empty? " << (myVector.empty() ? "Yes" : "No") << endl;
 
     // Insert at a specific position
     myVector.insert(myVector.begin() + 1, 15);
@@ -43,7 +52,6 @@ void vectorOperations() {
     // Erase an element at a specific position
     myVector.erase(myVector.begin());
     cout << "Vector after erasing the first element: ";
-    // Print the vector
     for (it = myVector.begin(); it != myVector.end(); ++it) {
         cout << *it << " ";
     }
@@ -70,6 +78,11 @@ void dequeOperations() {
     }
     cout << endl;
 
+    // Size and access methods
+    cout << "Deque size: " << myDeque.size() << endl;
+    cout << "Front element: " << myDeque.front() << endl;
+    cout << "Back element: " << myDeque.back() << endl;
+
     // Deletion from both ends
     myDeque.pop_back();
     myDeque.pop_front();
@@ -78,6 +91,9 @@ void dequeOperations() {
         cout << *it << " ";
     }
     cout << endl;
+
+    // Check if deque is empty
+    cout << "Is the deque empty? " << (myDeque.empty() ? "Yes" : "No") << endl;
 
     // Insert at a specific position in the middle
     myDeque.insert(myDeque.begin() + 1, 25);
@@ -116,6 +132,9 @@ void listOperations() {
     }
     cout << endl;
 
+    // List size
+    cout << "List size: " << myList.size() << endl;
+
     // Deletion: Removing elements from the front and back
     myList.pop_front();
     myList.pop_back();
@@ -125,14 +144,13 @@ void listOperations() {
     }
     cout << endl;
 
-    // Insert and erase using an iterator-> must use iterator because of DLL
-    it = myList.begin(); // "it" is an iterator of type list<int>::iterator that points at the first element
+    // Insert and erase using an iterator
+    it = myList.begin();
     advance(it, 1);  // Move iterator a specified number of steps forward
     myList.insert(it, 150); // Insert a value at the position pointed to by the iterator
-    // Print the list
     cout << "List after inserting 150 at position 1: ";
     for (it = myList.begin(); it != myList.end(); ++it) {
-        cout << *it << " "; // Dereferencing to access the value of the element
+        cout << *it << " ";
     }
     cout << endl;
 
@@ -147,6 +165,58 @@ void listOperations() {
     cout << endl;
 }
 
+// Function to demonstrate stack operations
+void stackOperations() {
+    cout << "\n--- Stack Operations ---" << endl;
+
+    stack<int> myStack; // Declare a stack with type integer
+
+    // Push elements onto the stack
+    myStack.push(10);
+    myStack.push(20);
+    myStack.push(30);
+
+    // Stack size
+    cout << "Stack size: " << myStack.size() << endl;
+
+    // Display and pop all elements from the stack
+    cout << "Stack elements (popped): ";
+    while (!myStack.empty()) {
+        cout << myStack.top() << " "; // Access the top element
+        myStack.pop(); // Remove the top element
+    }
+    cout << endl;
+
+    // Check if stack is empty
+    cout << "Is the stack empty? " << (myStack.empty() ? "Yes" : "No") << endl;
+}
+
+// Function to demonstrate queue operations
+void queueOperations() {
+    cout << "\n--- Queue Operations ---" << endl;
+
+    queue<int> myQueue; // Declare a queue with type integer
+
+    // Push elements onto the queue
+    myQueue.push(100);
+    myQueue.push(200);
+    myQueue.push(300);
+
+    // Queue size
+    cout << "Queue size: " << myQueue.size() << endl;
+
+    // Display and pop all elements from the queue
+    cout << "Queue elements (popped): ";
+    while (!myQueue.empty()) {
+        cout << myQueue.front() << " "; // Access the front element
+        myQueue.pop(); // Remove the front element
+    }
+    cout << endl;
+
+    // Check if queue is empty
+    cout << "Is the queue empty? " << (myQueue.empty() ? "Yes" : "No") << endl;
+}
+
 int main() {
     // Call vector operations
     vectorOperations();
@@ -156,6 +226,12 @@ int main() {
 
     // Call list operations
     listOperations();
+
+    // Call stack operations
+    stackOperations();
+
+    // Call queue operations
+    queueOperations();
 
     return 0;
 }

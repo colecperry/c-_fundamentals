@@ -1,0 +1,3 @@
+/Users/colecperry/Development/code/c++_fundamentals/reading_files_2/cmake-build-debug/CMakeFiles/reading_files_2.dir
+/Users/colecperry/Development/code/c++_fundamentals/reading_files_2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/colecperry/Development/code/c++_fundamentals/reading_files_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

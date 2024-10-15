@@ -1,0 +1,3 @@
+/Users/colecperry/Development/code/c++_fundamentals/practice_test_q4/cmake-build-debug/CMakeFiles/practice_test_q4.dir
+/Users/colecperry/Development/code/c++_fundamentals/practice_test_q4/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/colecperry/Development/code/c++_fundamentals/practice_test_q4/cmake-build-debug/CMakeFiles/rebuild_cache.dir

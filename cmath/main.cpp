@@ -50,6 +50,10 @@ int main() {
     double ceilValue = ceil(value); // Compute the smallest integer greater than or equal to 'value'
     cout << "Ceil of " << value << " is " << ceilValue << endl;
 
+    // Round
+    double roundValue = round(value); // Round the integer to nearest
+    cout << "Round of " << value << " is " << roundValue << endl;
+
     return 0;
 }
 

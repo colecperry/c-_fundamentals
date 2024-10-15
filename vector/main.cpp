@@ -82,6 +82,11 @@ int main() {
 
     myList3.pop_back(); // Built in method to remove the last element from the vector
 
+    myList1.insert(myList1.begin(), 9); // Insert 9 at index 0
+    myList1.insert(myList1.begin() + 1, 3, 9); // Insert three 9's starting at index 1
+
+    vector<int> myList4 = {1, 2, 3};
+    myList1.insert(myList1.end(), myList4.begin(), myList4.end()); // Insert elements of myList 4 into myList1 starting at the last index
 
     // Print each vector using the respective print functions
     printIntVector(myList1);  // Prints integers
