@@ -44,94 +44,6 @@ int length(NodeType *head) {
     return count;  // Return the total number of nodes in the list
 }
 
-// Get the value at a specific position in the list
-int get(NodeType *head, int position) {
-    NodeType *current = head;  // Create a temporary pointer `current` and set it to the head node
-    int index = 0;  // Initialize a counter to keep track of the current position
-    while (current != nullptr && index < position) {  // Traverse the list until reaching the position
-        current = current->next;  // Move to the next node
-        index++;  // Increment the index
-    }
-    if (current != nullptr) {  // If the desired position is found
-        return current->data;  // Return the data at that position
-    } else {
-        cout << "Position out of range!" << endl;
-        return -1;  // Return -1 if position is out of range
-    }
-}
-
-// Set a new value at a specific position in the list
-void set(NodeType *head, int position, int value) {
-    NodeType *current = head;  // Create a temporary pointer `current` and set it to the head node
-    int index = 0;  // Initialize a counter to keep track of the current position
-    while (current != nullptr && index < position) {  // Traverse the list until reaching the position
-        current = current->next;  // Move to the next node
-        index++;  // Increment the index
-    }
-    if (current != nullptr) {  // If the desired position is found
-        current->data = value;  // Set the new value at that position
-    } else {
-        cout << "Position out of range!" << endl;
-    }
-}
-
-// Insert a new node with the given value at a specific position in the list
-void insert(NodeType *&head, NodeType *&tail, int position, int value) {
-    NodeType *newNode = new NodeType{value, nullptr, nullptr};  // Create a new node with the given value
-    if (position == 0) {  // If position is 0, insert at the beginning
-        prepend(head, tail, value);
-        return;
-    }
-    NodeType *current = head;  // Create a temporary pointer `current` and set it to the head node
-    int index = 0;  // Initialize a counter to keep track of the current position
-    while (current != nullptr && index < position - 1) {  // Traverse to the node before the desired position
-        current = current->next;  // Move to the next node
-        index++;  // Increment the index
-    }
-    if (current != nullptr) {  // If position is valid and within range
-        newNode->next = current->next;  // Link the new node to the next node
-        if (current->next != nullptr) {
-            current->next->prev = newNode;  // Update the previous pointer of the next node
-        }
-        newNode->prev = current;  // Link the new node's previous pointer to the current node
-        current->next = newNode;  // Link the current node to the new node
-
-        if (newNode->next == nullptr) {  // If newNode is now the last node, update the tail pointer
-            tail = newNode;
-        }
-    } else {
-        cout << "Position out of range!" << endl;
-        delete newNode;  // Delete the new node to avoid memory leak
-    }
-}
-
-// Remove the first node with a specific value from the list
-void remove(NodeType *&head, NodeType *&tail, int value) {
-    NodeType *current = head;  // Create a temporary pointer `current` and set it to the head node
-    while (current != nullptr && current->data != value) {  // Traverse until the value is found
-        current = current->next;  // Move to the next node
-    }
-    if (current != nullptr) {  // If the value is found
-        if (current == head) {  // If the node to be removed is the head node
-            head = head->next;  // Update the head pointer
-            if (head != nullptr) {
-                head->prev = nullptr;  // Update the previous pointer of the new head node
-            }
-        } else if (current == tail) {  // If the node to be removed is the tail node
-            tail = tail->prev;  // Update the tail pointer
-            tail->next = nullptr;  // Set the next pointer of the new tail to nullptr
-        } else {
-            current->prev->next = current->next;  // Bypass the current node in the list
-            if (current->next != nullptr) {
-                current->next->prev = current->prev;  // Update the previous pointer of the next node
-            }
-        }
-        delete current;  // Delete the node
-    } else {
-        cout << "Value not found in the list!" << endl;
-    }
-}
-
 // Append a new node with the given value to the end of the list using the tail pointer
 void append(NodeType *&head, NodeType *&tail, int value) {
     NodeType *newNode = new NodeType{value, nullptr, nullptr};  // Create a new node with the given value and null next/prev pointers
@@ -145,6 +57,7 @@ void append(NodeType *&head, NodeType *&tail, int value) {
     }
 }
 
+
 // Prepend a new node with the given value to the beginning of the list
 void prepend(NodeType *&head, NodeType *&tail, int value) {
     NodeType *newNode = new NodeType{value, head, nullptr};  // Create a new node with the given value, next as head, and prev as nullptr
@@ -156,6 +69,7 @@ void prepend(NodeType *&head, NodeType *&tail, int value) {
         head = newNode;  // Update head to the new node, making it the new beginning of the list
     }
 }
+
 
 // Remove and return the last element from the list using the tail pointer
 int pop(NodeType *&head, NodeType *&tail) {
@@ -193,6 +107,122 @@ int popFirst(NodeType *&head, NodeType *&tail) {
     }
     delete temp;  // Delete the original head node
     return value;  // Return the value of the removed node
+}
+
+// Get the value at a specific position in the list
+int get(NodeType *head, int position) {
+    if (position < 0 || position > length(head)) {
+        return -1;
+    }
+    NodeType *current = head;  // Create a temporary pointer `current` and set it to the head node
+    int index = 0;  // Initialize a counter to keep track of the current position
+    while (current != nullptr && index < position) {  // Traverse the list until reaching the position
+        current = current->next;  // Move to the next node
+        index++;  // Increment the index
+    }
+    return current->data;
+}
+
+// Set a new value at a specific position in the list
+void set(NodeType *head, int position, int value) {
+    if (position < 0 || position >= length(head)) {
+        return;
+    }
+    NodeType *current = head;  // Create a temporary pointer `current` and set it to the head node
+    int index = 0;  // Initialize a counter to keep track of the current position
+    while (current != nullptr && index < position) {  // Traverse the list until reaching the position
+        current = current->next;  // Move to the next node
+        index++;  // Increment the index
+    }
+    current->data = value;
+}
+
+// Insert a new node with the given value at a specific position in the list
+void insert(NodeType *&head, NodeType *&tail, int position, int value) {
+    NodeType *newNode = new NodeType{value, nullptr, nullptr};  // Create a new node with the given value
+
+    if (position == 0) {  // If position is 0, insert at the beginning
+        prepend(head, tail, value);
+        return;
+    }
+
+    if (position == length(head)) {  // If position is at the end, insert at the end
+        append(head, tail, value);
+        return;
+    }
+
+    NodeType *current = head;
+    int index = 0;
+
+    // Traverse to the node just BEFORE the desired position
+    while (current != nullptr && index < position - 1) {
+        current = current->next;
+        index++;
+    }
+
+    if (current == nullptr || current->next == nullptr) {
+        cout << "Position out of bounds" << endl;
+        delete newNode;
+        return;
+    }
+
+    // Insert the newNode between `current` and `current->next`
+    newNode->next = current->next;  // Point newNode's next to current's next
+    newNode->prev = current;  // Point newNode's prev to current
+    current->next->prev = newNode;
+    current->next = newNode;  // Link current's next to the new node
+}
+
+
+// Remove the first node with a specific value from the list
+void removeByValue(NodeType *&head, NodeType *&tail, int value) {
+    NodeType *current = head;  // Create a temporary pointer `current` and set it to the head node
+
+    // Traverse until the value is found
+    while (current != nullptr && current->data != value) {
+        current = current->next;  // Move to the next node
+    }
+
+    if (current != nullptr) {  // If the value is found
+        if (current == head) {  // If the node to be removed is the head node
+            popFirst(head, tail);  // Call popFirst to remove the head node
+        } else if (current == tail) {  // If the node to be removed is the tail node
+            pop(head, tail);  // Call pop to remove the tail node
+        } else {  // If the node is in the middle
+            current->prev->next = current->next;  // Bypass the current node in the list
+            current->next->prev = current->prev;  // Update the previous pointer of the next node
+            current->next = nullptr;
+            current->prev = nullptr;
+            delete current;  // Delete the node
+        }
+    } else {
+        cout << "Value not found in the list!" << endl;
+    }
+}
+
+// Remove the element at a particular index
+void removeByIndex(NodeType *&head, NodeType *&tail, int index) {
+    if (index < 0 || index >= length(head)) {
+        cout << "Index out of bounds" << endl;
+        return;
+    }
+    if (index == 0) {
+        popFirst(head, tail);
+    }
+    else if (index == (length(head) - 1)) {
+        pop(head, tail);
+    }
+    NodeType *current = head;
+    NodeType *prev = nullptr;
+    for (int i = 0; i < index; i++) {
+        prev = current;
+        current = current->next;
+    }
+    prev->next = current->next;
+    current->next->prev = prev;
+    current->prev = nullptr;
+    current->next = nullptr;
+    delete current;
 }
 
 // Destroy the entire doubly linked list by deleting each node and freeing up memory
@@ -246,9 +276,14 @@ int main() {
     cout << "After inserting 99 at position 1: ";
     printList(head);
 
-    // Test the remove function
-    remove(head, tail, 42);
+    // Test the remove by value function
+    removeByValue(head, tail, 42);
     cout << "After removing 42 from the list: ";
+    printList(head);
+
+    // Test the remove by index function
+    removeByIndex(head, tail, 1);
+    cout << "After removing the 1st index from the list: ";
     printList(head);
 
     // Check if the list is empty

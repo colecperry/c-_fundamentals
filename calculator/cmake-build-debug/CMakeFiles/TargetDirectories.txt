@@ -1,3 +1,0 @@
-/Users/colecperry/Development/code/c++_fundamentals/calculator/cmake-build-debug/CMakeFiles/calculator.dir
-/Users/colecperry/Development/code/c++_fundamentals/calculator/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/colecperry/Development/code/c++_fundamentals/calculator/cmake-build-debug/CMakeFiles/rebuild_cache.dir

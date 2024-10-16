@@ -1,11 +1,17 @@
 #include <iostream>
 #include <cstring> // For strcpy, strcmp, and strlen
+#include <string>
 using namespace std;
 
 // ARRAYS: holds a collection of homogeneous elements: all integers, all decimals, all strings, all objects. Arrays have a fixed size
 
 // Declare a constant for the array size
 const int ARRAY_SIZE = 10;
+
+struct Name {
+    string firstName;
+    string lastName;
+};
 
 // Function to find the largest element in the array
 int findLargest(const int arr[], int size) { // When you pass an array into a function, don't use args
@@ -42,16 +48,32 @@ int linearSearch(int arr[], int size, int target) {
 
 int main() {
     // Declare an array of integers
-    int numbers_array[ARRAY_SIZE] = {0}; // Partial initialization, declares an array of 10 components and remaining elements set to 0. numbers_array is the name of the one-dimensional array that stores integers
+    int numbers_array[ARRAY_SIZE] = {0}; // Partial initialization, declares an array of 10 integers and remaining elements set to 0. numbers_array is the name of the one-dimensional array that stores integers
 
     // Declare whole array
     int numbers_array_2[10] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1}; // 10 is the size
 
-    // Declare partial array: declares array of 10 components and intializes index 0, 1, and 2, and all other components to 0
+    // Declare partial array: declares array of 10 components and initializes index 0, 1, and 2, and all other components to 0
     int numbers_array_3[10] = {8, 5, 12};
 
     // Don't have to declare the size, it will be determined by the number of initial vales in the braces
     double sales[] = {12.25, 32.50, 16.90, 23, 45.68};
+
+    // Array of strings
+    string stringArr[4] = {"I", "AM", "AN", "ARRAY"};
+
+    // Print the string array
+    for (int i = 0; i < 4; i++) {
+        cout << stringArr[i] << " " << endl;
+    }
+
+    // Array of structs
+    Name nameArr[3] = {{"cole", "perry"}, {"lucia", "hartmann"}, {"eric", "perry"}};
+
+    // Print the array of structs
+    for (int i = 0; i < 3; i++) {
+        cout << nameArr[i].firstName << " " << nameArr[i].lastName << endl;
+    }
 
     // Input elements into the array
     cout << "Enter " << ARRAY_SIZE << " integers:" << endl;
@@ -99,7 +121,7 @@ int main() {
     // Character array: Simply an array that holds characters, does not have to be null terminated
     char charArray[5] = {'a', 'b', 'c', 'd', 'e'};
 
-    // C-String: a type of character array that is 'null terminated' (ends with a special character '\0')
+    // C-String: a type of character array that is 'null terminated' (ends with a special character '\0'). Operations include strcpy(), strcmp(), and strlen()
 
     char name[] = "John"; // declares an array of length 5 and stores the C-string "John" -> C-strings are an array that represents a sequence of characters
 

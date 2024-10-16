@@ -1,0 +1,23 @@
+# ninja log v6
+1	502	1729034589750543040	CMakeFiles/doublyLinkedList.dir/main.cpp.o	b4a11c8e1364531d
+504	613	1729034590253130009	doublyLinkedList	cab5c2da9dbe3da2
+4	643	1729034992992228691	CMakeFiles/doublyLinkedList.dir/main.cpp.o	b4a11c8e1364531d
+643	748	1729034993630922549	doublyLinkedList	cab5c2da9dbe3da2
+8	609	1729035803477998588	CMakeFiles/doublyLinkedList.dir/main.cpp.o	b4a11c8e1364531d
+609	719	1729035804079441867	doublyLinkedList	cab5c2da9dbe3da2
+12	3063	1729036329672758847	CMakeFiles/doublyLinkedList.dir/main.cpp.o	b4a11c8e1364531d
+3063	4609	1729036332723631804	doublyLinkedList	cab5c2da9dbe3da2
+9	551	1729036956842133391	CMakeFiles/doublyLinkedList.dir/main.cpp.o	b4a11c8e1364531d
+551	658	1729036957384490563	doublyLinkedList	cab5c2da9dbe3da2
+9	688	1729037510645948644	CMakeFiles/doublyLinkedList.dir/main.cpp.o	b4a11c8e1364531d
+689	802	1729037511325510499	doublyLinkedList	cab5c2da9dbe3da2
+4	565	1729037801781998987	CMakeFiles/doublyLinkedList.dir/main.cpp.o	b4a11c8e1364531d
+565	672	1729037802343147213	doublyLinkedList	cab5c2da9dbe3da2
+9	608	1729038315377800413	CMakeFiles/doublyLinkedList.dir/main.cpp.o	b4a11c8e1364531d
+608	712	1729038315976744960	doublyLinkedList	cab5c2da9dbe3da2
+8	627	1729038576691001518	CMakeFiles/doublyLinkedList.dir/main.cpp.o	b4a11c8e1364531d
+627	737	1729038577309812818	doublyLinkedList	cab5c2da9dbe3da2
+4	574	1729038772693672913	CMakeFiles/doublyLinkedList.dir/main.cpp.o	b4a11c8e1364531d
+574	682	1729038773264196956	doublyLinkedList	cab5c2da9dbe3da2
+4	520	1729038808037938729	CMakeFiles/doublyLinkedList.dir/main.cpp.o	b4a11c8e1364531d
+521	607	1729038808554395889	doublyLinkedList	cab5c2da9dbe3da2
